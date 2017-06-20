@@ -1,0 +1,170 @@
+
+html,body{
+    width:100%;
+    height:100%;
+    font-size: 0.26rem;
+    font-family: '微软雅黑';
+}
+
+.inner{
+    background: #fff7f5;
+    padding:0 10%;
+    display: flex;
+    flex-direction: column;
+}
+.inner p{
+    text-align: justify;
+    margin:0.1rem 0 0.3rem;
+    color:#333;
+    line-height: 1.5em
+}
+ .inner input{
+    height:0.8rem;
+    width:100%;
+    border:0.02rem solid #ffb09e;
+    border-radius:0.12rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.26rem;
+     text-indent: 1em;
+
+}
+.inner .form #num{
+    width:2.8rem;
+    margin-right:0.2rem;
+}
+.inner .form .getNum{
+    width:2rem;
+    background: #ffb09e;
+    color:#fff;
+    text-indent:0;
+}
+.inner .form .error{
+    display: none;
+    color:#D91600;
+}
+.inner .form .role {
+    font-size: 0.2rem;
+    color: #999;
+    margin-bottom:0.2rem;
+    text-align: right;
+}
+.inner .form .role i{
+    color:#ffb09e;
+}
+.inner .form #submit{
+    background: #ffb09e;
+    color:#fff;
+    text-indent:0;
+    margin-bottom:0.5rem;
+}
+.inner .link{
+    text-align: center;
+}
+.inner .link .have{
+    display: inline-block;
+    height:0.8rem;
+    width:100%;
+    background: #f5f5f5;
+    border:0.01rem solid #b2b2b2;
+    border-radius:0.12rem;
+    color: #333;
+    font-size: 0.28rem;
+    line-height: 0.8rem;
+}
+.inner .link .footer{
+    display: inline-block;
+    margin:0.5rem 0 0.3rem;
+    color:#ffb09e;
+    font-size: 0.24rem;
+    border-bottom: #ffb09e solid 0.01rem;
+}
+.prop{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,.3);
+    z-index: 10;
+    display: none;
+}
+.prop .prop_{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+.prop .prop1{
+    width:5rem;
+    height:4.2rem;
+    text-align: center;
+    display: none;
+}
+.prop .prop1 p{
+    font-size:0.32rem;
+    font-weight: normal;
+    text-align: center;
+    line-height: 0.5rem;
+}
+.prop .prop1 p:nth-of-type(1){
+    margin-top:0.7rem;
+}
+.prop .prop1 p:nth-of-type(3){
+    margin-bottom:0.9rem;
+}
+.prop .prop1 .invitation{
+    display: inline-block;
+    width:4rem;
+    height:0.8rem;
+    color:#fff;
+    line-height: 0.8rem;
+    background: #ffb09e;
+    border-radius: 0.12rem;
+    font-size:0.3rem;
+    margin: 0 auto;
+}
+.prop .prop2{
+    width:5rem;
+    height:5.6rem;
+    display: none;
+}
+.prop .prop2 h3{
+    font-size: 0.28rem;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom:0.4rem;
+}
+.prop .prop2 p{
+    font-size:0.24rem;
+    color:#666;
+    line-height: 0.4rem;
+    text-align: justify;
+}
+.prop .prop2 .care{
+    margin-top:0.6rem;
+}
+.prop .prop_content{
+     padding:0.3rem;
+     border: 0.04rem solid #ffb09e;
+     border-radius: 0.12rem;
+     background: #fff;
+     position: relative;
+ }
+.prop .prop_content .X{
+    position: absolute;
+    right:0;
+    top:-0.9rem;
+    width:0.5rem;
+    height:0.5rem;
+}
+.prop .prop_content .X:after{
+    content: '';
+    width:0.04rem;
+    height:0.4rem;
+    background: #ffb09e;
+    position: absolute;
+    bottom:-0.4rem;
+    left: 0.23rem;
+}

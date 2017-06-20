@@ -2,83 +2,61 @@
 <html >
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>发送验证码倒计时功能</title>
+    <title>邀好友，得金币</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+    <link href="css/setting.css" rel="stylesheet" type="text/css">
+    <link href="css/yanzhen.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/style.js"></script>
+    <script src="js/yanzhen.js"></script>
+
 </head>
 <body>
-<!--代码部分begin-->
-<style>
-    *{margin:0;padding:0}
-    .form span{display: none;}
+<div class="header"><img src="images/banner-01.png"></div>
+<div class="inner">
+    <p class="text">接受与美汇小伙伴的邀请，快来注册与美汇账号吧，立得30金币，更可体验超低美容价格，金币更可于与美汇商城直接购买产品哟</p>
+    <form class="form">
 
-</style>
-<form class="form">
+        <input type="text" id="phone" class="infos" placeholder="请输入手机号码" />
+        <span class="error1 error">请输入正确的手机号码</span>
+        <br>
+        <input type="text" id="num" class="infos" placeholder="请输入验证码" />
+        <input type="button" class="getNum" value="获取验证码" onclick="sends.send()" >
+        <span class="error2 error">验证码错误</span>
+        <br>
+        <input type="text" id="passWord" class="infos" placeholder="请输入密码" />
+        <br>
+        <div class="role">点击即代表你已同意<i>《与美汇用户协议》</i></div>
+        <input type="submit" id="submit" class="infos" value="领取金币"  onclick="sends.regFinish()"/>
 
-    <label for="phone">手机号：<input type="text" id="phone" class="infos" placeholder="请输入手机号码" /></label>
-    <input type="button" class="getNum" value="获取验证码" onclick="sends.send()">
-    <span class="error1">请输入正确的手机号码</span>
-    <br>
-    <label for="num">验证码：<input type="text" id="num" class="infos" placeholder="请输入验证码" /></label>
+    </form>
+    <div class="link">
+        <a href="#" class="have">已有与美汇账号，去邀请赚取金币</a>
+        <br>
+        <a href="javascript:;" class="footer" onclick="sends.role()">了解活动详细规则</a>
+    </div>
+</div>
+<div class="prop">
+    <div class="prop1 prop_">
+        <div class="prop_content">
+            <div class="X" onclick="sends.close()"><img src="images/close.png"></div>
+            <p>您已是与美汇注册用户</p>
+            <p>现在邀请好友</p>
+            <p>立得30金币</p>
+            <a href="experience.html" class="invitation">去邀请</a>
+        </div>
+    </div>
+    <div class="prop2 prop_">
+        <div class="prop_content">
+            <div class="X" onclick="sends.close()"><img src="images/close.png"></div>
+            <h3>活动规则</h3>
+            <p>1、在与美汇app【推荐】中，通过“微信好友”或“朋友圈”分享给您的朋友；</p>
+            <p>2、对方点击您的链接注册成功后，你们都可以获得30金币；</p>
+            <p>3、金币可用于与美汇微信商城里换取产品，30金币就相当于30元人民币！</p>
+            <p class="care">注意：一定要通过登录自己的app进行分享，这样你才能和你的朋友都获得金币，如果直接拿别人给你的链接，金币奖励就是别人的咯。</p>
+        </div>
+    </div>
+</div>
 
-    <span>验证码错误</span>
-    <br>
-    <label for="submit"><input type="submit" id="submit" class="infos" value="领取金币" /></label>
-
-</form>
-
-
-<script>
-        var sends = {
-            checked:1,
-            send:function(){
-                var numbers = /^1\d{10}$/;
-                var val = $('#phone').val().replace(/\s+/g,""); //获取输入手机号码
-                if(!numbers.test(val)||val.length===0){
-                    $('.error1').show()
-                }
-                var timer;
-                if(numbers.test(val)){
-                    var time=30;
-                    timer=setInterval(function(){
-                        time--;
-                        $('.getNum').val(time+"S后再次发送");
-                        if(time===0){
-                            clearInterval(timer)
-                            $('.getNum').val("获取验证码");
-                        }
-                    },1000);
-                }
-/*
-                if($('.div-phone button').attr('class') == 'send1'){
-                    if(!numbers.test(val) || val.length ==0){
-                        $('.div-phone').append('<span class="error">请输入正确的手机号码</span>');
-                        return false;
-                    }
-                }
-                if(numbers.test(val)){
-                    $('.div-phone .send1').attr('disabled','disabled')
-                    var time = 30;
-                    $('.div-phone span').remove();
-                    function timeCountDown(){
-                        if(time==0){
-                            clearInterval(timer);
-                            $('.div-phone .send1').attr('disabled','')
-                            $('.div-phone button').addClass('send1').removeClass('send0').html("发送验证码");
-                            sends.checked = 1;
-                            return true;
-                        }
-                        $('.div-phone button').html(time+"S后再次发送");
-                        time--;
-                        return false;
-                        sends.checked = 0;
-                    }
-                    $('.div-phone button').addClass('send0').removeClass('send1');
-                    timeCountDown();
-                    var timer = setInterval(timeCountDown,1000);
-                }
-*/
-            }
-        }
-</script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+html,body{
+    width:100%;
+    height:100%;
+    font-size: 0.26rem;
+    font-family: '微软雅黑';
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+.inner{
+    background: #fff7f5;
+    padding:0 10%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+}
+.inner p{
+    text-align: justify;
+    margin:0.4rem 0;
+    color:#333;
+    line-height: 1.5em;
+}
+.inner div{
+    color:#666;
+    font-size:0.24rem;
+    text-align: center;
+}
+.inner div i{
+    color:#ff3333;
+}
+.inner a{
+    display: inline-block;
+    width:100%;
+    height:0.88rem;
+    line-height: 0.88rem;
+    text-align: center;
+    border:0.02rem solid #ffb09e;
+    border-radius:0.12rem;
+    font-size: 0.3rem;
+}
+.inner a:nth-of-type(1){
+    color:#ffb09e;
+    background: #fff;
+    margin:0.4rem 0;
+}
+.inner a:nth-of-type(2){
+    color:#fff;
+    background: #ffb09e;
+    margin-bottom:0.5rem;
+
+}
