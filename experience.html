@@ -14,11 +14,52 @@
 <div class="inner">
     <p class="text">已接受与美汇小伙伴的邀请，快下载与美汇APP享受互联网美容的便捷与实惠吧，金币更可以直接用于与美汇微信商城消费哟</p>
     <div>30金币已入账户:13812345678  <i>修改></i></div>
+<<<<<<< HEAD
     <a href="# " id="openApp">立即体验与美汇</a>
+=======
+    <a href=" itms://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8" id="openApp">立即体验与美汇</a>
+>>>>>>> 0a81f52c0059d2cb783579562bad08c0a7e5e873
     <a href="#">进入与美汇商城</a>
 </div>
 </body>
 </html>
+<<<<<<< HEAD
+=======
+<script type="text/javascript">
+    document.getElementById('openApp').onclick = function(e){
+        // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
+        // 否则打开a标签的href链接
+        var ifr = document.createElement('iframe');
+      // ifr.src = 'testYMH';
+        ifr.style.display = 'none';
+        document.body.appendChild(ifr);
+        window.setTimeout(function(){
+            document.body.removeChild(ifr);
+        },3000)
+    };
+</script>
+<!--
+<script type="text/javascript">
+    document.getElementById('openApp').onclick = function(e){
+
+        if(navigator.userAgent.match(/(iPhone|iPod|iPad);?/i))
+        {
+            window.location.href = "com.baidu.tieba://";//ios app协议
+            window.setTimeout(function() {
+                window.location.href = "itms://itunes.apple.com/cn/app/%E4%B8%8E%E7%BE%8E%E6%B1%87/id1161081835?mt=8";
+            }, 2000)
+        }
+        if(navigator.userAgent.match(/android/i))
+        {
+            window.location.href = "com.baidu.tieba://app";//android app协议
+            window.setTimeout(function() {
+                window.location.href = "https://****.apk";//android 下载地址
+            }, 2000)
+        }
+    };
+</script>
+-->
+>>>>>>> 0a81f52c0059d2cb783579562bad08c0a7e5e873
 
 
 
