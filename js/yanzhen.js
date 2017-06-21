@@ -1,6 +1,12 @@
 /**
  * Created by j on 2017/6/20.
  */
+$(function(){
+    $(window).scroll(function(){
+        var propH=$(window).height()+$(window).scrollTop();
+        $('.prop').css('height',propH)
+    })
+});
 
 var sends = {
     checked:1,
@@ -44,10 +50,4 @@ var sends = {
         $('.prop').hide()
     }
 };
-$(function(){
-    $(window).scroll(function(){
-        var propH=$(window).height()+$(window).scrollTop();
-        $('.prop').css('height',propH)
-    })
-});
 
