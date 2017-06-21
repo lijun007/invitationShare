@@ -37,16 +37,19 @@ var sends = {
     },
     //活动规则
     role:function(){
+        console.log(3)
         $('.prop').show();
         $('.prop .prop2').show().siblings().hide();
     },
     //注册完成
     regFinish:function(){
+        console.log(1)
         $('.prop').show();
         $('.prop .prop1').show().siblings().hide();
     },
     //关闭弹窗
     close:function(){
+        console.log(2)
         $('.prop').hide()
     }
 };
