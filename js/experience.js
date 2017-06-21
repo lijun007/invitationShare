@@ -2,6 +2,7 @@
  * Created by j on 2017/6/20.
  */
 $(function(){
+/*
     document.getElementById('openApp').onclick = function(e){
         // 通过iframe的方式试图打开APP，如果能正常打开，会直接切换到APP，并自动阻止a标签的默认行为
         // 否则打开a标签的href链接
@@ -13,6 +14,17 @@ $(function(){
             document.body.removeChild(ifr);
         },3000)
     };
+*/
+
+    $('#openApp').click(function(){
+        var ifr = document.createElement('iframe');
+        ifr.src = 'testYMH';
+        ifr.style.display = 'none';
+        document.body.appendChild(ifr);
+        window.setTimeout(function(){
+            document.body.removeChild(ifr);
+        },3000)
+    })
 
 /*
     document.getElementById('openApp').onclick = function(e){
