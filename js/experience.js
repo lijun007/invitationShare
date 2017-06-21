@@ -18,7 +18,7 @@ $(function(){
 
     $('#openApp').click(function(){
         var ifr = document.createElement('iframe');
-        ifr.src = 'testYMH';
+        //ifr.src = 'testYMH';
         ifr.style.display = 'none';
         document.body.appendChild(ifr);
         window.setTimeout(function(){
