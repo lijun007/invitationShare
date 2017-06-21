@@ -4,12 +4,15 @@
 $(function(){
 
     $('#openApp').click(function(e){
+/*
         var ifr = document.createElement('iframe');
-        ifr.src = 'http://testYMH://';
+        ifr.src = 'testYMH://';
         ifr.style.display = 'none';
         document.body.appendChild(ifr);
+*/
+        window.location.href = "testYMH://";//ios app协议
         window.setTimeout(function(){
-            document.body.removeChild(ifr);
+           // document.body.removeChild(ifr);
             window.location.href = "http://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
         },3000)
     })
