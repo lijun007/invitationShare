@@ -39,12 +39,10 @@ var sends = {
         $('.prop').show();
         $('.prop .prop1').show().siblings().hide();
     },
-/*
     //关闭弹窗
     close:function(){
         $('.prop').hide()
     }
-*/
 };
 $(function(){
     $(window).scroll(function(){
