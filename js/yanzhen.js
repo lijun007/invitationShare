@@ -12,6 +12,8 @@ $(function(){
 
         if(/MicroMessenger/i.test(navigator.userAgent)||navigator.userAgent.indexOf('QQBrowser') !== -1){
             $('.guidePage').show();
+        }else {
+            $('.guidePage').hide();
         }
     }
 });
