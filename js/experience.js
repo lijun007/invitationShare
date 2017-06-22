@@ -17,15 +17,13 @@ $(function(){
         };
         if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
             // console.log(111)
-            if(/MicroMessenger/ig.test(navigator.userAgent)/*||/qq/ig.test(navigator.userAgent)*/){
+            if(/MicroMessenger/ig.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)){
                 $('.guidePage').show();
 
             }else {
                 $('.guidePage').hide();
-                document.body.removeChild(ifr);
-                ifr.src= "testYMH://";//ios app协议
+                window.location.href= "testYMH://";//ios app协议
                 setInterval(function(){
-                    document.body.appendChild(ifr);
                     window.location.href = "itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
                 },1000)
 
