@@ -10,7 +10,7 @@ $(function(){
     });
     if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
        // console.log(111)
-        if(/MicroMessenger/i.test(navigator.userAgent)||navigator.userAgent.indexOf('QQBrowser')!== -1){
+        if(/MicroMessenger/ig.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)){
             $('.guidePage').show();
         }else {
             $('.guidePage').hide();

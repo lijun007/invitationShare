@@ -13,18 +13,12 @@ $(function(){
             timer=setInterval(function(){
                 document.body.removeChild(ifr);
                 window.location.href = "http://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
-                if(document.hidden || document.webkitHidden){
-                    clearInterval(timer)
-                }
             },1000)
         };
         if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
             window.location.href = "testYMH://";//ios app协议
             timer=setInterval(function(){
                 window.location.href = "http://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
-                if(document.hidden || document.webkitHidden){
-                    clearInterval(timer)
-                }
             },1000)
 
         }
