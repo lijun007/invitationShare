@@ -14,7 +14,6 @@ $(function(){
             // console.log(111)
             if(/MicroMessenger/ig.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)){
                 $('.guidePage').show();
-
             }else {
                 $('.guidePage').hide();
                 window.location.href = "testYMH://";//ios app协议
