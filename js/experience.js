@@ -114,3 +114,17 @@ var BrowserInfo = function() {
     return json;
 };*/
 
+var sends = {
+    checked:1,
+    //活动规则
+    role:function(){
+        console.log(3)
+        $('.prop').show();
+        $('.prop .prop2').show().siblings().hide();
+    },
+    //关闭弹窗
+    close:function(){
+        console.log(2)
+        $('.prop').hide()
+    }
+};

@@ -14,7 +14,7 @@ html,body{
 }
 .inner p{
     text-align: justify;
-    margin:0.1rem 0 0.3rem;
+    margin-top:0.1rem;
     color:#333;
     line-height: 1.5em
 }
@@ -77,10 +77,11 @@ html,body{
     color: #333;
     font-size: 0.28rem;
     line-height: 0.8rem;
+    margin-bottom:0.3rem;
 }
-.inner .link .footer{
-    display: inline-block;
-    margin:0.5rem 0 0.3rem;
+.inner .footer{
+
+    margin:0.3rem auto;
     color:#ffb09e;
     font-size: 0.24rem;
     border-bottom: #ffb09e solid 0.01rem;
