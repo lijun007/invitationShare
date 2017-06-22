@@ -17,7 +17,7 @@ $(function(){
         };
         if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
             // console.log(111)
-            if(/MicroMessenger/ig.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)){
+            if(/MicroMessenger/ig.test(navigator.userAgent)/*||/qq/ig.test(navigator.userAgent)*/){
                 $('.guidePage').show();
 
             }else {
