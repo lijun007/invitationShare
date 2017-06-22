@@ -5,7 +5,10 @@ $(function(){
     $(window).scroll(function(){
         var propH=$(window).height()+$(window).scrollTop();
         $('.prop').css('height',propH)
-    })
+    });
+    if(/MicroMessenger/gi.test(navigator.userAgent)){
+        $('.guidePage').show();
+    }
 });
 
 var sends = {
