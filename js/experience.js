@@ -40,6 +40,7 @@ $(function(){
         }
 */
     })
+/*
     $(document).on('visibilitychange webkitvisibilitychange', function() {
         var tag = document.hidden || document.webkitHidden;
         if (tag) {
@@ -50,6 +51,7 @@ $(function(){
     $(window).on('pagehide', function() {
         clearTimeout(timer);
     })
+*/
 
 
 })
