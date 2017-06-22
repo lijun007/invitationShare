@@ -3,7 +3,7 @@
  */
 $(function(){
 
-    $('#openApp').addEventListener('click',function(e){
+    $('#openApp').on('click',function(e){
         var ifr = document.createElement('iframe');
         ifr.style.display = 'none';
         var timer;
