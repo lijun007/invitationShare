@@ -6,7 +6,7 @@ $(function(){
         var propH=$(window).height()+$(window).scrollTop();
         $('.prop').css('height',propH)
     });
-    if(/MicroMessenger/gi.test(navigator.userAgent)&&/QQ/gi.test(navigator.userAgent)){
+    if(/MicroMessenger/gi.test(navigator.userAgent)&&navigator.userAgent.indexOf('QQBrowser') !== -1){
         $('.guidePage').show();
     }
 });
