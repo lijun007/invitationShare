@@ -17,10 +17,9 @@ $(function(){
             },1000)
         };
         if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
-            document.body.appendChild(ifr);
-            ifr.src = "testYMH://";//ios app协议
+            window.location.href = "testYMH://";//ios app协议
             window.setInterval(function(){
-                document.body.removeChild(ifr);
+
                 window.location.href = "http://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
             },1000)
 
