@@ -6,9 +6,10 @@ $(function(){
         var propH=$(window).height()+$(window).scrollTop();
         $('.prop').css('height',propH)
     });
-    if(/MicroMessenger/gi.test(navigator.userAgent)&&navigator.userAgent.indexOf('QQBrowser') !== -1){
+    if(/MicroMessenger/i.test(navigator.userAgent)&&navigator.userAgent.indexOf('QQBrowser') !== -1){
         $('.guidePage').show();
     }
+    console.log(navigator.userAgent)
 });
 
 var sends = {
