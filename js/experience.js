@@ -2,6 +2,12 @@
  * Created by j on 2017/6/20.
  */
 $(function(){
+    $(window).scroll(function(){
+        var propH=$(document).height()/*+$(window).scrollTop()*/;
+        $('.prop').css('height',propH);
+
+    });
+
 
     $('#openApp').on('click',function(e){
         var ifr = document.createElement('iframe');

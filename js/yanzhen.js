@@ -3,7 +3,7 @@
  */
 $(function(){
     $(window).scroll(function(){
-        var propH=$(window).height()+$(window).scrollTop();
+        var propH=$(document).height()/*+$(window).scrollTop()*/;
         $('.prop').css('height',propH);
         $('.guidePage').css('height',propH);
 
