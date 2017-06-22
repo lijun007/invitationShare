@@ -3,8 +3,7 @@
  */
 $(function(){
 
-    $('#openApp').click(function(e){
-
+    $('#openApp').addEventListener('click',function(e){
         var ifr = document.createElement('iframe');
         ifr.style.display = 'none';
         var timer;
@@ -19,21 +18,10 @@ $(function(){
         if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
             window.location.href = "testYMH://";//ios app协议
             timer=setInterval(function(){
-
                 window.location.href = "http://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
             },1000)
 
         }
-        $(document).on('visibilitychange webkitvisibilitychange', function() {
-            var tag = document.hidden || document.webkitHidden;
-            if (tag) {
-                clearTimeout(timer);
-            }
-        })
-
-        $(window).on('pagehide', function() {
-                clearTimeout(timer);
-        })
 /*
         if(/android/i.test(navigator.userAgent)){
             window.location.href = "xl://ymh:8888/FirstActivity";//Android app协议
@@ -52,6 +40,17 @@ $(function(){
         }
 */
     })
+    $(document).on('visibilitychange webkitvisibilitychange', function() {
+        var tag = document.hidden || document.webkitHidden;
+        if (tag) {
+            clearTimeout(timer);
+        }
+    })
+
+    $(window).on('pagehide', function() {
+        clearTimeout(timer);
+    })
+
 
 })
 /*
