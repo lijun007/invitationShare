@@ -4,12 +4,16 @@
 $(function(){
     $(window).scroll(function(){
         var propH=$(window).height()+$(window).scrollTop();
-        $('.prop').css('height',propH)
+        $('.prop').css('height',propH);
+        $('.guidePage').css('height',propH);
+
     });
-    if(/MicroMessenger/i.test(navigator.userAgent)&&navigator.userAgent.indexOf('QQBrowser') !== -1){
-        $('.guidePage').show();
+    if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
+
+        if(/MicroMessenger/i.test(navigator.userAgent)||navigator.userAgent.indexOf('QQBrowser') !== -1){
+            $('.guidePage').show();
+        }
     }
-    console.log(navigator.userAgent)
 });
 
 var sends = {
