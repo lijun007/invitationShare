@@ -20,17 +20,16 @@
         <span class="error1 error">请输入正确的手机号码</span>
         <br>
         <input type="text" id="num" class="infos" placeholder="请输入验证码" />
-        <input type="button" class="getNum" value="获取验证码" onclick="sends.send()" >
+        <input type="button" class="getNum" value="获取验证码" onclick="sends.regFinish()" >
         <span class="error2 error">验证码错误</span>
         <br>
         <input type="text" id="passWord" class="infos" placeholder="请输入密码" />
         <br>
         <div class="role">点击即代表你已同意<i>《与美汇用户协议》</i></div>
-        <input type="button" id="submit" class="infos" value="领取金币"  onclick="sends.regFinish()"/>
-
+        <a href="experience.html" id="submit" class="infos" >领取金币</a>
     </form>
     <div class="link">
-        <a href="#" class="have">已有与美汇账号，去邀请赚取金币</a>
+        <a href="javascript:;" class="have">已有与美汇账号，去邀请赚取金币</a>
         <br>
         <a href="javascript:;" class="footer" onclick="sends.role()">了解活动详细规则</a>
     </div>
@@ -42,7 +41,7 @@
             <p>您已是与美汇注册用户</p>
             <p>现在邀请好友</p>
             <p>立得30金币</p>
-            <a href="experience.html" class="invitation">去邀请</a>
+            <a href="javascript:;" class="invitation">去邀请</a>
         </div>
     </div>
     <div class="prop2 prop_">

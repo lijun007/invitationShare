@@ -52,10 +52,17 @@ html,body{
     color:#ffb09e;
 }
 .inner .form #submit{
+    display: inline-block;
+    width:100%;
+    height:0.8rem;
+    line-height: 0.8rem;
+    text-align: center;
     background: #ffb09e;
     color:#fff;
-    text-indent:0;
     margin-bottom:0.5rem;
+    border:0.02rem solid #ffb09e;
+    border-radius:0.12rem;
+    font-size: 0.26rem;
 }
 .inner .link{
     text-align: center;
@@ -176,7 +183,7 @@ html,body{
     height:100%;
     z-index: 10;
     display: none;
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.7);
 }
 .guidePage img{
     width:100%;
