@@ -14,13 +14,14 @@ $(function(){
             // console.log(111)
             if(/MicroMessenger/ig.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)){
                 $('.guidePage').show();
+
+            }else {
+                $('.guidePage').hide();
                 window.location.href = "testYMH://";//ios app协议
                 setInterval(function(){
                     window.location.href = "http://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
                 },1000)
 
-            }else {
-                $('.guidePage').hide();
             }
         };
         var ifr = document.createElement('iframe');
