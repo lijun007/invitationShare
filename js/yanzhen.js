@@ -9,9 +9,8 @@ $(function(){
 
     });
     if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
-        console.log(111)
+       // console.log(111)
         if(/MicroMessenger/i.test(navigator.userAgent)||navigator.userAgent.indexOf('QQBrowser')!== -1){
-
             $('.guidePage').show();
         }else {
             $('.guidePage').hide();
