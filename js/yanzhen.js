@@ -17,7 +17,6 @@ $(function(){
         }
     }
 });
-
 var sends = {
     checked:1,
     //获取验证码
