@@ -12,9 +12,9 @@ $(function(){
 
         if(/MicroMessenger/i.test(navigator.userAgent)||navigator.userAgent.indexOf('QQBrowser')!== -1){
             $('.guidePage').show();
-        }else {
+        }/*else {
             $('.guidePage').hide();
-        }
+        }*/
     }
 });
 var sends = {
