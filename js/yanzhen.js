@@ -8,7 +8,7 @@ $(function(){
         $('.guidePage').css('height',propH);
 
     });
-
+    var timer;
     $('.link .have').on('click',function(){
         if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
             // console.log(111)
@@ -17,7 +17,7 @@ $(function(){
             }else {
                 $('.guidePage').hide();
                 window.location.href = "testYMH://";//ios app协议
-                setInterval(function(){
+                timer=setInterval(function(){
                     window.location.href = "itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
                 },1000)
 
@@ -25,16 +25,13 @@ $(function(){
         };
         if(/android/i.test(navigator.userAgent)){
             window.location.href= "xl://ymh:8888/FirstActivity";//Android app协议
-            setInterval(function(){
+            timer=setInterval(function(){
                 window.location.href = "itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
             },1000)
         };
 
 
     })
-
-
-
 
 });
 var sends = {
