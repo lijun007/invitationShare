@@ -4,11 +4,13 @@
 
 app.controller("experienceCtrl",function ($scope,$state){
     $(function(){
+/*
         $(window).scroll(function(){
-            var propH=$(document).height()/*+$(window).scrollTop()*/;
+            var propH=$(document).height()/!*+$(window).scrollTop()*!/;
             $('.prop').css('height',propH);
-
+            $('.guidePage').css('height',propH);
         });
+*/
 
         var timer
         $('#openApp').on('click',function(e){
@@ -61,7 +63,7 @@ app.controller("experienceCtrl",function ($scope,$state){
 
     })
 
-    var sends = {
+    $scope.sends = {
         checked:1,
         //活动规则
         role:function(){

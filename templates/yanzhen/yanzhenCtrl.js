@@ -3,11 +3,13 @@
  */
 app.controller("yanzhenCtrl",function ($scope){
     $(function(){
+/*
         $(window).scroll(function(){
-            var propH=$(document).height()/*+$(window).scrollTop()*/;
+            var propH=$(document).height()/!*+$(window).scrollTop()*!/;
             $('.prop').css('height',propH);
             $('.guidePage').css('height',propH);
         });
+*/
         var timer;
         $('.link .have').on('click',function(){
             if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
