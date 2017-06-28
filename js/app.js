@@ -90,7 +90,7 @@ app.factory('open',function(){
                         if( t1-t0<3000 && t1-t0>2000){
                             window.location.href = "app下载地址";
                         }
-                        if(t1-t0>=2000){
+                        if(/*t1-t0>=2000*/window.onload){
                             clearInterval(delay);
                         }
                     },1000);
@@ -107,7 +107,7 @@ app.factory('open',function(){
                         if( t1-t0<3000 && t1-t0>2000){
                             window.location.href ="itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
                         }
-                        if(t1-t0>=2000){
+                        if(window.onload){
                             clearInterval(delay);
                         }
                     },1000);
