@@ -121,9 +121,11 @@ app.factory('scroll',function(){
     return {
         height:function(){
             /*var propH=$('.header').height()+$('.inner').height();*/
-            var propH=$(document).height()+$(document).scroll().offsetTop;
-            $('.prop').css('height',propH);
-            $('.guidePage').css('height',propH);
+            return $(window).scroll(function(){
+                var propH=$(document).height()+$(document).scroll().offsetTop;
+                $('.prop').css('height',propH);
+                $('.guidePage').css('height',propH);
+            })
         }
     }
 });
