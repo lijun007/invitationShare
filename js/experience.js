@@ -52,7 +52,7 @@ $(function(){
                 }
         */
     })
-    $(document).hide(function(){
+    $(window).addEventListener('visibilityChange',function(){
         clearInterval(timer)
     })
 

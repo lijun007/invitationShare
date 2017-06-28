@@ -30,7 +30,7 @@ $(function(){
             },1000)
         };
     })
-    $(document).hide(function(){
+    $(window).addEventListener('visibilityChange',function(){
         clearInterval(timer)
     })
 });
