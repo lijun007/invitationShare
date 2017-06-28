@@ -4,10 +4,6 @@ html,body{
     font-size: 0.26rem;
     font-family: '微软雅黑';
 }
-body{
-    display: flex;
-    flex-direction: column;
-}
 .inner{
     background: #fff7f5;
     padding:0 10%;
