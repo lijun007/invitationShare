@@ -1,15 +1,11 @@
 /**
  * Created by j on 2017/6/28.
  */
-app.controller("yanzhenCtrl",function ($scope){
-    $(function(){
+app.controller("yanzhenCtrl",function ($scope,scroll,open){
+    scroll.height();
+    open.openApp();
 /*
-        $(window).scroll(function(){
-            var propH=$(document).height()/!*+$(window).scrollTop()*!/;
-            $('.prop').css('height',propH);
-            $('.guidePage').css('height',propH);
-        });
-*/
+    $(function(){
         var timer;
         $('.link .have').on('click',function(){
             if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
@@ -37,6 +33,8 @@ app.controller("yanzhenCtrl",function ($scope){
             };
         })
     });
+*/
+
     $scope.sends = {
         checked:1,
         //获取验证码

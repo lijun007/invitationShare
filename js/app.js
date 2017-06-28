@@ -38,7 +38,7 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider,$ur
             }
         })
 }])
-app.factory('',function(){
+app.factory('open',function(){
     return {
        openApp:function(){
            if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
@@ -65,5 +65,14 @@ app.factory('',function(){
                },1000)
            };
        }
+    }
+});
+app.factory('scroll',function(){
+    return {
+        height:function(){
+            var propH=$(document).height();
+            $('.prop').css('height',propH);
+            $('.guidePage').css('height',propH);
+        }
     }
 });
