@@ -4,12 +4,15 @@ html,body{
     font-size: 0.26rem;
     font-family: '微软雅黑';
 }
+body{
+    display: flex;
+}
 .inner{
     background: #fff7f5;
     padding:0 10%;
     display: flex;
     flex-direction: column;
-
+    flex-grow: 1;
 }
 .inner p{
     text-align: justify;

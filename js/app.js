@@ -11,7 +11,7 @@ $(function(){
     $(window).scroll(function(){
         var propH=$(document).height()/*+$(window).scrollTop()*/;
         $('.prop').css('height',propH);
-        $('.guidePage').css('height',$(window).height());
+        $('.guidePage').css('height',propH);
     });
 });
 var app=angular.module('app',['ui.router']);
