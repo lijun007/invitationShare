@@ -71,15 +71,14 @@ app.factory('open',function(){
 */
         openApp:function(){
             //判断浏览器
-            var u = navigator.userAgent;
-            if(/MicroMessenger/gi.test(u)) {
+            if(/MicroMessenger/gi.test(navigator.userAgent)) {
                 // 引导用户在浏览器中打开
                 $('.guidePage').show();
                 return;
             }
             var d = new Date();
             var t0 = d.getTime();
-            if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1){
+            if(/android/i.test(navigator.userAgent)){
                 //Android
                 if(window.location.href= "xl://ymh:8888/FirstActivity"){
                     window.location.href= "xl://ymh:8888/FirstActivity";
@@ -97,7 +96,8 @@ app.factory('open',function(){
                         }
                     },1000);
                 }
-            }else if(u.indexOf('iPhone') > -1){
+            }
+            if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                 //IOS
                 if( window.location.href = "testYMH://"){
                     window.location.href = "testYMH://";
