@@ -120,7 +120,7 @@ app.factory('open',function(){
 app.factory('scroll',function(){
     return {
         height:function(){
-            var propH=$('.heaader').height()+$('.inner').height();
+            var propH=$('.header').height()+$('.inner').height();
             $('.prop').css('height',propH);
             $('.guidePage').css('height',propH);
         }
