@@ -3,7 +3,10 @@
  */
 app.controller("yanzhenCtrl",function ($scope,scroll,open){
     scroll.height();
-    open.openApp();
+   // open.openApp();
+    $scope.openAPP=function(){
+        open.openApp();
+    }
 /*
     $(function(){
         var timer;
