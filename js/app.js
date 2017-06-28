@@ -83,7 +83,7 @@ app.factory('open',function(){
                         var d = new Date();
                         var t1 = d.getTime();
                         if( t1-t0<3000 && t1-t0>2000){
-                            window.location.href = "app下载地址";
+                            window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3539022?recrefer=SE_D_%E4%B8%8E%E7%BE%8E%E6%B1%87";
                         }
                         if(t1-t0>=1000){
                             clearInterval(delay);
@@ -120,7 +120,8 @@ app.factory('open',function(){
 app.factory('scroll',function(){
     return {
         height:function(){
-            var propH=$('.header').height()+$('.inner').height();
+            /*var propH=$('.header').height()+$('.inner').height();*/
+            var propH=$(document).height()+$(document).scroll().offsetTop;
             $('.prop').css('height',propH);
             $('.guidePage').css('height',propH);
         }
