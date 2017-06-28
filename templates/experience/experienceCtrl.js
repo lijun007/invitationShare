@@ -65,7 +65,10 @@ app.controller("experienceCtrl",function ($scope,scroll,open){
     })
 */
     scroll.height();
-    open.openApp()
+    $scope.openAPP=function(){
+        open.openApp()
+    }
+
     $scope.sends = {
         checked:1,
         //活动规则
