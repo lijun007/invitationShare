@@ -71,11 +71,6 @@ app.factory('open',function(){
 */
         submitApp:function(){
             //判断浏览器
-            if(/MicroMessenger/gi.test(navigator.userAgent)) {
-                // 引导用户在浏览器中打开
-                $('.guidePage').show();
-                return;
-            }
             var d = new Date();
             var t0 = d.getTime();
             if(/android/i.test(navigator.userAgent)){
@@ -90,7 +85,7 @@ app.factory('open',function(){
                         if( t1-t0<3000 && t1-t0>2000){
                             window.location.href = "app下载地址";
                         }
-                        if(/*t1-t0>=2000*/window.onload()){
+                        if(t1-t0>=1000){
                             clearInterval(delay);
                         }
                     },1000);
@@ -98,6 +93,12 @@ app.factory('open',function(){
             }
             if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                 //IOS
+                if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
+                    // 引导用户在浏览器中打开
+                    $('.guidePage').show();
+                    return;
+                }
+
                 if( this.openApp('testYMH://')){
                     this.openApp('testYMH://');
                 }else{
@@ -107,7 +108,7 @@ app.factory('open',function(){
                         if( t1-t0<3000 && t1-t0>2000){
                             window.location.href ="itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
                         }
-                        if(window.onload()){
+                        if(t1-t0>=1000){
                             clearInterval(delay);
                         }
                     },1000);
