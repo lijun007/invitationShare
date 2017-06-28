@@ -2,11 +2,19 @@
  * Created by j on 2017/6/28.
  */
 app.controller("yanzhenCtrl",function ($scope,scroll,open){
-    scroll.height();
 
-    $scope.openAPP=function(){
-        open.submitApp();
-    };
+    scroll.height();
+    if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
+        // 引导用户在浏览器中打开
+        $('.guidePage').show();
+        return;
+    }else {
+        $scope.openAPP=function(){
+            open.submitApp();
+        };
+
+    }
+
 /*
     $(function(){
         var timer;

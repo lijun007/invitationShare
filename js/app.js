@@ -93,11 +93,6 @@ app.factory('open',function(){
             }
             if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                 //IOS
-                if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
-                    // 引导用户在浏览器中打开
-                    $('.guidePage').show();
-                    return;
-                }
 
                 if( this.openApp('testYMH://')){
                     this.openApp('testYMH://');
@@ -117,7 +112,7 @@ app.factory('open',function(){
         },
         openApp:function(src) {
             window.location.href=src;
-    }
+        }
 
     }
 });
