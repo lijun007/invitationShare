@@ -66,7 +66,7 @@ app.controller("experienceCtrl",function ($scope,scroll,open){
 */
     scroll.height()
     $scope.openAPP=function(){
-        open.openApp()
+        open.submitApp()
     }
 
     $scope.sends = {
