@@ -7,13 +7,15 @@
     var rem=viewW/6.4;
     html.style.fontSize=rem+'px'
 })();
+/*
 $(function(){
     $(window).scroll(function(){
-        var propH=$(document).height()/*+$(window).scrollTop()*/;
+        var propH=$(document).height()/!*+$(window).scrollTop()*!/;
         $('.prop').css('height',propH);
         $('.guidePage').css('height',propH);
     });
 });
+*/
 var app=angular.module('app',['ui.router']);
 app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider,$urlRouterProvider){
     //默认路由到mainTab
@@ -64,7 +66,7 @@ app.factory('open',function(){
        }
     }
 });
-/*
+
 app.factory('scroll',function(){
     return {
         height:function(){
@@ -74,4 +76,4 @@ app.factory('scroll',function(){
         }
     }
 });
-*/
+

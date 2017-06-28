@@ -2,6 +2,8 @@
  * Created by j on 2017/6/28.
  */
 app.controller("yanzhenCtrl",function ($scope,scroll,open){
+    scroll.height();
+
     $scope.openAPP=function(){
         open.openApp();
     };
