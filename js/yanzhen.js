@@ -29,10 +29,10 @@ $(function(){
                 window.location.href = "itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
             },1000)
         };
-
-
     })
-
+    $(document).hide(function(){
+        clearInterval(timer)
+    })
 });
 var sends = {
     checked:1,
