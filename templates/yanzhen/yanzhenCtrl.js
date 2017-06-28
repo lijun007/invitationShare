@@ -5,7 +5,7 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open){
     scroll.height();
 
     $scope.openAPP=function(){
-        open.openApp();
+        open.submitApp();
     };
 /*
     $(function(){

@@ -69,7 +69,7 @@ app.factory('open',function(){
            })
        },
 */
-        openApp:function(){
+        submitApp:function(){
             //判断浏览器
             if(/MicroMessenger/gi.test(navigator.userAgent)) {
                 // 引导用户在浏览器中打开
@@ -80,8 +80,8 @@ app.factory('open',function(){
             var t0 = d.getTime();
             if(/android/i.test(navigator.userAgent)){
                 //Android
-                if(window.location.href= "xl://ymh:8888/FirstActivity"){
-                    window.location.href= "xl://ymh:8888/FirstActivity";
+                if(this.openApp('xl://ymh:8888/FirstActivity')){
+                    this.openApp('xl://ymh:8888/FirstActivity');
                 }else{
                     //由于打开需要1～2秒，利用这个时间差来处理－－打开app后，返回h5页面会出现页面变成app下载页面，影响用户体验
                     var delay = setInterval(function(){
@@ -99,8 +99,8 @@ app.factory('open',function(){
             }
             if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                 //IOS
-                if( window.location.href = "testYMH://"){
-                    window.location.href = "testYMH://";
+                if( this.openApp('testYMH://')){
+                    this.openApp('testYMH://');
                 }else{
                     var delay = setInterval(function(){
                         var d = new Date();
@@ -115,7 +115,10 @@ app.factory('open',function(){
                     },1000);
                 }
             }
-        }
+        },
+        openApp:function(src) {
+            window.location.href=src;
+    }
 
     }
 });
