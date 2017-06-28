@@ -9,7 +9,7 @@
 })();
 $(function(){
     $(window).scroll(function(){
-        var propH=$(document).height()/*+$(window).scrollTop()*/;
+        var propH=$('html').height()/*+$(window).scrollTop()*/;
         $('.prop').css('height',propH);
         $('.guidePage').css('height',propH);
     });
