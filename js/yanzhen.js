@@ -30,7 +30,7 @@ $(function(){
             },1000)
         };
     })
-    $(window).addEventListener('visibilityChange',function(){
+    $(window).on('visibilityChange','pagehide',function(){
         clearInterval(timer)
     })
 });

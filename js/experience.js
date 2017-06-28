@@ -52,11 +52,9 @@ $(function(){
                 }
         */
     })
-    $(window).addEventListener('visibilityChange',function(){
+    $(window).on('visibilityChange','pagehide',function(){
         clearInterval(timer)
     })
-
-
 
 })
 /*
