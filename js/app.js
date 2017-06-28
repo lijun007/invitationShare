@@ -73,4 +73,5 @@ app.factory('scroll',function(){
             $('.guidePage').css('height',propH);
         }
     }
-});*/
+});
+*/

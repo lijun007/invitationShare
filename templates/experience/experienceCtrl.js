@@ -64,6 +64,7 @@ app.controller("experienceCtrl",function ($scope,scroll,open){
 
     })
 */
+
     $scope.openAPP=function(){
         open.openApp()
     }

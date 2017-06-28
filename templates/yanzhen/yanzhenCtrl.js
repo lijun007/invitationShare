@@ -4,7 +4,7 @@
 app.controller("yanzhenCtrl",function ($scope,scroll,open){
     $scope.openAPP=function(){
         open.openApp();
-    }
+    };
 /*
     $(function(){
         var timer;
