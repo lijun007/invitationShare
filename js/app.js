@@ -42,7 +42,8 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider,$ur
 }])
 app.factory('open',function(){
     return {
-       openApp:function(){
+/*
+        openApp:function(){
            var timer=null;
            if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                // console.log(111)
@@ -66,7 +67,56 @@ app.factory('open',function(){
            $(window).onload(function(){
                clearInterval(timer)
            })
-       }
+       },
+*/
+        openApp:function(){
+            //判断浏览器
+            var u = navigator.userAgent;
+            if(/MicroMessenger/gi.test(u)) {
+                // 引导用户在浏览器中打开
+                $('.guidePage').show();
+                return;
+            }
+            var d = new Date();
+            var t0 = d.getTime();
+            if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1){
+                //Android
+                if(window.location.href= "xl://ymh:8888/FirstActivity"){
+                    window.location.href= "xl://ymh:8888/FirstActivity";
+                }else{
+                    //由于打开需要1～2秒，利用这个时间差来处理－－打开app后，返回h5页面会出现页面变成app下载页面，影响用户体验
+                    var delay = setInterval(function(){
+                        var d = new Date();
+                        var t1 = d.getTime();
+                        if( t1-t0<3000 && t1-t0>2000){
+                            alert('请下载APP');
+                            window.location.href = "app下载地址";
+                        }
+                        if(t1-t0>=3000){
+                            clearInterval(delay);
+                        }
+                    },1000);
+                }
+            }else if(u.indexOf('iPhone') > -1){
+                //IOS
+                if( window.location.href = "testYMH://"){
+                    window.location.href = "testYMH://";
+                }else{
+                    var delay = setInterval(function(){
+                        var d = new Date();
+                        var t1 = d.getTime();
+                        if( t1-t0<3000 && t1-t0>2000){
+                            alert('请下载APP');
+                            window.location.href ="itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
+                        }
+                        if(t1-t0>=3000){
+                            clearInterval(delay);
+                        }
+                    },1000);
+                }
+            }
+        }
+
     }
 });
 
