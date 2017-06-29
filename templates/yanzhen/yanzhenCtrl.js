@@ -9,6 +9,10 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open){
             // 引导用户在浏览器中打开
             $('.guidePage').show();
             return;
+        }else {
+            $scope.openAPP=function(){
+                open.submitApp();
+            };
         }
     }
     else {
