@@ -116,6 +116,9 @@ app.factory('scroll',function(){
            $('.guidePage').bind('touchmove',function(){
                e.preventDefault()
            })
+           $('.prop').bind('touchmove',function(){
+               e.preventDefault()
+           })
         }
     }
 });
