@@ -35,33 +35,6 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider,$ur
 }])
 app.factory('open',function(){
     return {
-/*
-        openApp:function(){
-           var timer=null;
-           if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
-               // console.log(111)
-               if(/MicroMessenger/ig.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)){
-                   $('.guidePage').show();
-               }else {
-                   $('.guidePage').hide();
-                   window.location.href = "testYMH://";//ios app协议
-                   timer=setInterval(function(){
-                       window.location.href = "itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
-                   },1000)
-
-               }
-           };
-           if(/android/i.test(navigator.userAgent)){
-               window.location.href= "xl://ymh:8888/FirstActivity";//Android app协议
-               timer=setInterval(function(){
-                   window.location.href = "itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
-               },1000)
-           };
-           $(window).onload(function(){
-               clearInterval(timer)
-           })
-       },
-*/
         submitApp:function(){
             //判断浏览器
             var d = new Date();
@@ -105,7 +78,18 @@ app.factory('open',function(){
         },
         openApp:function(src) {
             window.location.href=src;
+        },
+/*
+        //DES加密
+        encryptByDES:function(){
+            var keyHex = CryptoJS.enc.Utf8.parse(key);
+            var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
+                mode: CryptoJS.mode.ECB,
+                padding: CryptoJS.pad.Pkcs7
+            });
+            return encrypted.toString();
         }
+*/
 
     }
 });
