@@ -180,7 +180,7 @@ body{
     left: 0.23rem;
 }
 .guidePage{
-    position:absolute;
+    position:fixed;
     top:0;
     left:0;
     width:100%;
