@@ -4,11 +4,14 @@
 app.controller("yanzhenCtrl",function ($scope,scroll,open){
 
     scroll.height();
-    if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
-        // 引导用户在浏览器中打开
-        $('.guidePage').show();
-        return;
-    }else {
+    if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
+        if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
+            // 引导用户在浏览器中打开
+            $('.guidePage').show();
+            return;
+        }
+    }
+    else {
         $scope.openAPP=function(){
             open.submitApp();
         };
