@@ -1,8 +1,8 @@
 /**
  * Created by j on 2017/6/28.
  */
-var urlSend='http://127.0.0.1:80/mes/front/send';
-//var urlVal='http://114.55.140.250/mes/front/validation';
+var urlSend='http://114.55.140.250/mes/front/send';
+var urlVal='http://114.55.140.250/mes/front/validation';
 app.controller("yanzhenCtrl",function ($scope,scroll,open,$http){
 
     scroll.height();
@@ -28,29 +28,28 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open,$http){
     $scope.sends = {
         checked:1,
         //获取验证码
-        send:function(){
+        send:function(phoneNum){
             var salt=this.RandomUtil();
             var key = "daoyintech";
-            var ivKey='yumeihu1';
-            var phone=$scope.num;
-            var message ="appname=ymh&salt="+salt+"&phone="+phone+"&action=register";
-            var keyHex = CryptoJS.enc.Utf8.parse(key);
-            var ivHex = CryptoJS.enc.Utf8.parse(ivKey);
-
-            //加密
-            var hash=this.encrypted(message,keyHex,ivHex)
-            //解密
-            var deHash=this.decrypted(hash,keyHex,ivHex)
+            var message ="appname=ymh&" + "salt=123456&phone=15198289750&action=register";
+            var enResult = strEnc(message,key);
+            var hash=this.stringToHex (enResult);
+            var hashBase64=this.hexToString(hash)
+            var bb='OW/JCHO2zctQZChQpbTWaHVEL/YyoZMEGgjAfpf9xX696fx0d+VK9SzPqzTI8JWf6/LOXt5de4x5zMj6dQWy2g=='
+            //console.log(bb.length)
+            var deResult = strDec(hashBase64,key)
+            console.log(enResult)
             console.log(hash)
-            console.log(deHash)
 
-            $http.post(urlSend+"?hash="+hash+"&salt="+salt,function(data){
+            console.log(hashBase64)
+            console.log(deResult)
+            $http.post(urlSend+"?hash="+hash+"&salt="+salt
+            ,function(data){
                 $('.prop').show();
                 $('.prop .prop1').show().siblings().hide();
                 console.log(data)
-            });
-
-
+            })
+            /*
              var numbers = /0?(13|14|15|18|17)[0-9]{9}/;
              var val = $('#phone').val().replace(/\s+/g,"");//获取输入手机号码
              if(!numbers.test(val)||val.length===0){
@@ -73,7 +72,7 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open,$http){
              }
              },1000);
              }
-
+             */
         },
         //活动规则
         role:function(){
@@ -93,31 +92,28 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open,$http){
             // 随机产生
             for(var i=0;i<6;i++){
                 var pos = Math.floor(Math.random()*arr.length);
+                console.log(pos)
                 str+= arr[pos];
             }
             return str;
         },
-        //加密
-        encrypted:function(message,keyHex,ivHex){
-            var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
-                iv:ivHex,
-                mode: CryptoJS.mode.CBC,
-                padding: CryptoJS.pad.Pkcs7
-            });
-            return encrypted.toString().replace(/\+/g,"%2B");
-        },
-        //解密
-        decrypted:function(hash,keyHex,ivHex){
-            var decrypted = CryptoJS.DES.decrypt({
-                ciphertext: CryptoJS.enc.Base64.parse(hash)
-            }, keyHex, {
-                iv:ivHex,
-                mode: CryptoJS.mode.CBC,
-                padding: CryptoJS.pad.Pkcs7
-            });
-            return decrypted.toString(CryptoJS.enc.Utf8);
-        }
+        //hash的DES加密；
 
-    };
+        //base64编码
+        stringToHex:function(s){
+            var b = new Base64();
+            var str = b.encode(s);
+            //console.log("base64 encode:" + str);
+            return str
+        },
+        //base64解码
+        hexToString:function (h) {
+        var b = new Base64();
+        var str = b.decode(h);
+        //console.log("base64 decode:" + str);
+        return str
+    }
+
+};
 
 })
