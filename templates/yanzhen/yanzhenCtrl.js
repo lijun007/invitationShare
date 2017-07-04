@@ -10,6 +10,7 @@ var urlReg='http://114.55.140.250/user/invitationRegister.do';
 var url='http://restapi.amap.com/v3/ip?ip=&output=xml&key=907e63b14492f7e9b16a50775d811280';
 app.controller("yanzhenCtrl",function ($scope,scroll,open,$http,$state){
     scroll.height();
+/*
     if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
         if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
             // 引导用户在浏览器中打开
@@ -21,11 +22,12 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open,$http,$state){
             };
         }
     }
-    else {
+*/
+    //else {
         $scope.openAPP=function(){
             open.submitApp();
         };
-    }
+  //  }
     $scope.sends = {
         checked:1,
         //获取验证码
