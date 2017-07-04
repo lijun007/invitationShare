@@ -7,19 +7,18 @@
         <input type="text" id="phone" class="infos" placeholder="请输入手机号码"  ng-model="num"/>
         <span class="error1 error">请输入正确的手机号码</span>
         <br>
-        <input type="text" id="num" class="infos" placeholder="请输入验证码" />
+        <input type="text" id="num" class="infos" placeholder="请输入验证码" ng-model="SmsCheckCodeVal"/>
         <input type="button" class="getNum" value="获取验证码" ng-click="sends.send()" >
         <span class="error2 error">验证码错误</span>
         <br>
-        <input type="text" id="passWord" class="infos" placeholder="请输入密码" />
+        <input type="password" id="passWord" class="infos" placeholder="请输入密码" ng-model="pw" />
+        <span class="error3 error">请输入6-16位包含数字和字母的密码</span>
         <br>
         <div class="role">点击即代表你已同意<i>《与美汇用户协议》</i></div>
-        <a href="#" ui-sref="experience" id="submit" class="infos" >领取金币</a>
+        <a href="#"  id="submit" class="infos"  ng-click="sends.getGold()">领取金币</a>
     </form>
     <div class="link">
         <a href="javascript:;" class="have" ng-click="openAPP()">已有与美汇账号，去邀请赚取金币</a>
-
-
     </div>
 </div>
 <div class="prop">
@@ -29,7 +28,7 @@
             <p>您已经注册与美汇啦</p>
             <p>现在登录与美汇邀请好友</p>
             <p>立得30金币哟</p>
-            <a href="javascript:;" class="invitation">去邀请</a>
+            <a href="javascript:;" class="invitation" ng-click="openAPP()">去邀请</a>
         </div>
     </div>
     <div class="prop2 prop_">

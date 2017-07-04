@@ -1,10 +1,11 @@
 /**
  * Created by j on 2017/6/28.
  */
-var urlSend='http://127.0.0.1:80/mes/front/send';
-//var urlVal='http://114.55.140.250/mes/front/validation';
-app.controller("yanzhenCtrl",function ($scope,scroll,open,$http){
-
+var urlSend='http://localhost/mes/front/send';
+var urlVal='http://localhost/mes/front/validation';
+var urlReg='http://localhost/user/invitationRegister.do';
+var url='http://restapi.amap.com/v3/ip?ip=&output=xml&key=907e63b14492f7e9b16a50775d811280';
+app.controller("yanzhenCtrl",function ($scope,scroll,open,$http,$state){
     scroll.height();
     if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
         if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
@@ -21,10 +22,7 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open,$http){
         $scope.openAPP=function(){
             open.submitApp();
         };
-
     }
-
-
     $scope.sends = {
         checked:1,
         //获取验证码
@@ -41,39 +39,42 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open,$http){
             var hash=this.encrypted(message,keyHex,ivHex)
             //解密
             var deHash=this.decrypted(hash,keyHex,ivHex)
-            console.log(hash)
-            console.log(deHash)
+            //console.log(hash)
+            //console.log(deHash)
 
-            $http.post(urlSend+"?hash="+hash+"&salt="+salt,function(data){
-                $('.prop').show();
-                $('.prop .prop1').show().siblings().hide();
-                console.log(data)
+            $http.post(urlSend+"?hash="+hash+"&salt="+salt).success(function(data){
+
+                if(data.msg==='该手机号已经注册，请直接登录'){
+                    $('.prop').show();
+                    $('.prop .prop1').show().siblings().hide();
+                    clearInterval(timer)
+                }
+
             });
 
+            //获取验证码倒计时
+            var numbers = /0?(13|14|15|18|17)[0-9]{9}/;
+            var val = $('#phone').val().replace(/\s+/g, "");//获取输入手机号码
+            if (!numbers.test(val) || val.length === 0) {
+                $('.error1').show()
+            }
+            var timer;
+            if (numbers.test(val)) {
+                $('.getNum').attr('disabled', 'disabled');
+                $('.error1').hide()
+                var time = 30;
+                timer = setInterval(function () {
+                    time--;
+                    $('.getNum').val(time + "S后再次发送");
+                    if (time === 0) {
+                        clearInterval(timer);
 
-             var numbers = /0?(13|14|15|18|17)[0-9]{9}/;
-             var val = $('#phone').val().replace(/\s+/g,"");//获取输入手机号码
-             if(!numbers.test(val)||val.length===0){
-             $('.error1').show()
-             }
-             var timer;
-             if(numbers.test(val)){
-             $('.getNum').attr('disabled','disabled');
-             $('.error1').hide()
-             var time=30;
-             timer=setInterval(function(){
-             time--;
-             $('.getNum').val(time+"S后再次发送");
-             if(time===0){
-             clearInterval(timer);
+                        $('.getNum').val("获取验证码");
 
-             $('.getNum').val("获取验证码");
-
-             $('.getNum').attr('disabled',false)
-             }
-             },1000);
-             }
-
+                        $('.getNum').attr('disabled', false)
+                    }
+                }, 1000);
+            }
         },
         //活动规则
         role:function(){
@@ -116,8 +117,40 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open,$http){
                 padding: CryptoJS.pad.Pkcs7
             });
             return decrypted.toString(CryptoJS.enc.Utf8);
-        }
+        },
+        //领取金币
+        getGold:function(){
+            var _this=this;
+            $http.post(urlVal+"?phone="+$scope.num+"&SmsCheckCodeVal="+$scope.SmsCheckCodeVal).success(function(data){
+                //console.log(data)
+                if(data.result==0){
+                    $('.error2').show();
+                    return
+                }else {
+                    $('.error2').hide();
+                    _this.password();
+                }
+                //console.log($scope.num)
+                //console.log($scope.SmsCheckCodeVal)
+            })
+        },
+        //输入密码条件限制
+        password:function(){
+            var pw=/^[a-zA-Z0-9]{6,16}$/;
+            if(!pw.test($scope.pw)){
+               $('.error3').show()
+            }else {
+                $('.error3').hide();
+                var pass=hex_md5($scope.pw);
+                $http.post(url).success(function(data){
+                    var regarea_id=data.adcode
+                    $http.post(urlReg+"?invitation=1&pwd="+pass+"&mobile="+$scope.num+"&type=1&status=0&divice_type=wap&regarea_id="+regarea_id).success(function(){
+                        $state.go('experience',{phoneNum:$scope.num});
+                    });
 
+                });
+            }
+        }
     };
 
 })

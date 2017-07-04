@@ -10,22 +10,22 @@ html,body{
     display: flex;
     flex-direction: column;
 }
-.inner p{
+#experience .inner p{
     text-align: justify;
     margin-top:0.1rem ;
     color:#333;
     line-height: 1.5em;
 }
-.inner div{
+#experience.inner div{
     color:#666;
     font-size:0.24rem;
     text-align: center;
 }
-.inner div .back{
+#experience .inner div .back{
     color:#ff3333;
 
 }
-.inner #openApp,.inner #weixin{
+#experience .inner #openApp,.inner #weixin{
     display: inline-block;
     width:100%;
     height:0.88rem;
@@ -35,18 +35,18 @@ html,body{
     border-radius:0.12rem;
     font-size: 0.3rem;
 }
-.inner a:nth-of-type(1){
+#experience .inner a:nth-of-type(1){
     color:#ffb09e;
     background: #fff;
     margin:0.3rem 0;
 }
-.inner a:nth-of-type(2){
+#experience .inner a:nth-of-type(2){
     color:#fff;
     background: #ffb09e;
     margin-bottom:0.5rem;
 
 }
-.inner .footer{
+#experience .inner .footer{
 
     margin:0.3rem auto;
     color:#ffb09e;

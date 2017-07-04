@@ -25,7 +25,7 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider,$ur
         })
 
         .state('experience', {
-            url: '/experience',
+            url: '/experience:phoneNum',
             views:{'':{
                 templateUrl: 'templates/experience/experience.html',
                 controller:'experienceCtrl'
@@ -79,17 +79,6 @@ app.factory('open',function(){
         openApp:function(src) {
             window.location.href=src;
         },
-/*
-        //DES加密
-        encryptByDES:function(){
-            var keyHex = CryptoJS.enc.Utf8.parse(key);
-            var encrypted = CryptoJS.DES.encrypt(message, keyHex, {
-                mode: CryptoJS.mode.ECB,
-                padding: CryptoJS.pad.Pkcs7
-            });
-            return encrypted.toString();
-        }
-*/
 
     }
 });
@@ -97,13 +86,14 @@ app.factory('open',function(){
 app.factory('scroll',function(){
     return {
         height:function(){
-           $('.guidePage').bind('touchmove',function(){
+           $('.guidePage').bind('touchmove',function(e){
                e.preventDefault()
            })
-           $('.prop').bind('touchmove',function(){
+           $('.prop').bind('touchmove',function(e){
                e.preventDefault()
            })
         }
     }
 });
+
 

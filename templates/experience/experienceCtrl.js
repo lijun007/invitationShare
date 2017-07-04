@@ -2,7 +2,7 @@
  * Created by j on 2017/6/28.
  */
 
-app.controller("experienceCtrl",function ($scope,scroll,open){
+app.controller("experienceCtrl",function ($scope,scroll,open,$stateParams){
 /*
     $(function(){
 /!*
@@ -64,7 +64,8 @@ app.controller("experienceCtrl",function ($scope,scroll,open){
 
     })
 */
-
+    $scope.phoneNum=$stateParams.phoneNum;
+    console.log($scope.phoneNum)
     scroll.height()
     if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
         if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
