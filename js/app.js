@@ -86,9 +86,11 @@ app.factory('open',function(){
 app.factory('scroll',function(){
     return {
         height:function(){
+/*
            $('.guidePage').bind('touchmove',function(e){
                e.preventDefault()
            })
+*/
            $('.prop').bind('touchmove',function(e){
                e.preventDefault()
            })
