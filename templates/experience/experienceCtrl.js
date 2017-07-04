@@ -70,7 +70,7 @@ app.controller("experienceCtrl",function ($scope,scroll,open,$stateParams){
     if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
         if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
             // 引导用户在浏览器中打开
-            $('.guidePage').show();
+            //$('.guidePage').show();
             return;
         }else {
             $scope.openAPP=function(){
