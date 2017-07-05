@@ -55,16 +55,19 @@ app.factory('open',function(){
                 ifr.style.display = 'none';
                 document.body.appendChild(ifr);
 */
+                console.log(1)
                 window.location.href='xl://ymh:8888/FirstActivity';
                 //由于打开需要1～2秒，利用这个时间差来处理－－打开app后，返回h5页面会出现页面变成app下载页面，影响用户体验
                 var delay = setInterval(function(){
                     //document.body.removeChild(ifr);
+                    console.log(2)
                     var d = new Date();
                     var t1 = d.getTime();
                     if( t1-t0<3000 && t1-t0>2000){
                         window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3539022?recrefer=SE_D_%E4%B8%8E%E7%BE%8E%E6%B1%87";
                     }
                     if(t1-t0>=2000){
+                        console.log(3)
                         clearInterval(delay);
                     }
                 },1000);
