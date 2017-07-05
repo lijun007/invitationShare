@@ -47,19 +47,39 @@ app.factory('open',function(){
             //判断浏览器
             var d = new Date();
             var t0 = d.getTime();
-            if(/android/i.test(navigator.userAgent)){
-                //Android
-/*
-                var ifr = document.createElement('iframe');
-                ifr.src = 'xl://ymh:8888/FirstActivity';
-                ifr.style.display = 'none';
-                document.body.appendChild(ifr);
-*/
-                console.log(1)
-               // window.location.href='xl://ymh:8888/FirstActivity';
-                //由于打开需要1～2秒，利用这个时间差来处理－－打开app后，返回h5页面会出现页面变成app下载页面，影响用户体验
+            if(/MicroMessenger/gi.test(navigator.userAgent)){
+                this.androidLoad();
+                this.iosLoad();
+            };
+            if(/qq/ig.test(navigator.userAgent)){
+                this.androidOpen();
+                this.iosLoad();
+            }
+            else {
+                this.androidOpen();
+                this.iosOpen();
+            }
+        },
+        openApp:function(src) {
+            window.location.href=src;
+        },
+        iosLoad:function(){
+            if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                 var delay = setInterval(function(){
-                    //document.body.removeChild(ifr);
+                    var d = new Date();
+                    var t1 = d.getTime();
+                    if( t1-t0<3000 && t1-t0>2000){
+                        window.location.href ="itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
+                    }
+                    if(t1-t0>=2000){
+                        clearInterval(delay);
+                    }
+                },1000);
+            }
+        },
+        androidLoad:function(){
+            if(/android/i.test(navigator.userAgent)){
+                var delay = setInterval(function(){
                     console.log(2)
                     var d = new Date();
                     var t1 = d.getTime();
@@ -71,15 +91,14 @@ app.factory('open',function(){
                         clearInterval(delay);
                     }
                 },1000);
-
-            }
+            };
+        },
+        iosOpen:function(){
             if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                 //IOS
-/*
                 if( this.openApp('testYMH://')){
                     this.openApp('testYMH://');
                 }else{
-*/
                     var delay = setInterval(function(){
                         var d = new Date();
                         var t1 = d.getTime();
@@ -90,18 +109,36 @@ app.factory('open',function(){
                             clearInterval(delay);
                         }
                     },1000);
-                //}
+                }
             }
         },
-/*
-        openApp:function(src) {
-            window.location.href=src;
-        },
-*/
+        androidOpen:function(){
+            if(/android/i.test(navigator.userAgent)){
+                //Android
+                if( this.openApp('xl://ymh:8888/FirstActivity')){
+                    this.openApp('xl://ymh:8888/FirstActivity');
+                }else {
+                    //由于打开需要1～2秒，利用这个时间差来处理－－打开app后，返回h5页面会出现页面变成app下载页面，影响用户体验
+                    var delay = setInterval(function(){
+                        //document.body.removeChild(ifr);
+                        console.log(2)
+                        var d = new Date();
+                        var t1 = d.getTime();
+                        if( t1-t0<3000 && t1-t0>2000){
+                            window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3539022?recrefer=SE_D_%E4%B8%8E%E7%BE%8E%E6%B1%87";
+                        }
+                        if(t1-t0>=2000){
+                            console.log(3)
+                            clearInterval(delay);
+                        }
+                    },1000);
+                }
+
+            };
+        }
 
     }
 });
-
 app.factory('scroll',function(){
     return {
         height:function(){
