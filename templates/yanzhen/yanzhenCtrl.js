@@ -1,12 +1,12 @@
 /**
  * Created by j on 2017/6/28.
  */
-var urlSend='http://localhost/mes/front/send';
-//var urlSend='http://114.55.140.250/mes/front/send';
-var urlVal='http://localhost/mes/front/validation';
-//var urlVal='http://114.55.140.250/mes/front/validation';
-var urlReg='http://localhost/user/invitationRegister.do';
-//var urlReg='http://114.55.140.250/user/invitationRegister.do';
+//var urlSend='http://localhost/mes/front/send';
+var urlSend='http://114.55.140.250/mes/front/send';
+//var urlVal='http://localhost/mes/front/validation';
+var urlVal='http://114.55.140.250/mes/front/validation';
+//var urlReg='http://localhost/user/invitationRegister.do';
+var urlReg='http://114.55.140.250/user/invitationRegister.do';
 var url='http://restapi.amap.com/v3/ip?ip=&output=xml&key=907e63b14492f7e9b16a50775d811280';
 app.controller("yanzhenCtrl",function ($scope,scroll,open,$http,$state){
     scroll.height();
