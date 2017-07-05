@@ -68,7 +68,7 @@ app.factory('open',function(){
                 var delay = setInterval(function(){
                     var d = new Date();
                     var t1 = d.getTime();
-                    if( t1-t0<3000 && t1-t0>2000){
+                    if( t1-t0<2000 && t1-t0>1000){
                         window.location.href ="itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
                     }
                     if(t1-t0>=2000){
@@ -83,7 +83,7 @@ app.factory('open',function(){
                     console.log(2)
                     var d = new Date();
                     var t1 = d.getTime();
-                    if( t1-t0<3000 && t1-t0>2000){
+                    if( t1-t0<2000 && t1-t0>1000){
                         window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3539022?recrefer=SE_D_%E4%B8%8E%E7%BE%8E%E6%B1%87";
                     }
                     if(t1-t0>=2000){
@@ -102,7 +102,7 @@ app.factory('open',function(){
                     var delay = setInterval(function(){
                         var d = new Date();
                         var t1 = d.getTime();
-                        if( t1-t0<3000 && t1-t0>2000){
+                        if( t1-t0<2000 && t1-t0>1000){
                             window.location.href ="itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
                         }
                         if(t1-t0>=2000){
@@ -124,7 +124,7 @@ app.factory('open',function(){
                         console.log(2)
                         var d = new Date();
                         var t1 = d.getTime();
-                        if( t1-t0<3000 && t1-t0>2000){
+                        if( t1-t0<2000 && t1-t0>1000){
                             window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3539022?recrefer=SE_D_%E4%B8%8E%E7%BE%8E%E6%B1%87";
                         }
                         if(t1-t0>=2000){
