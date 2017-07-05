@@ -48,16 +48,16 @@ app.factory('open',function(){
             var d = new Date();
             var t0 = d.getTime();
             if(/MicroMessenger/gi.test(navigator.userAgent)){
-                this.androidLoad();
-                this.iosLoad();
+                this.androidLoad(t0);
+                this.iosLoad(t0);
             };
             if(/qq/ig.test(navigator.userAgent)){
-                this.androidOpen();
-                this.iosLoad();
+                this.androidOpen(t0);
+                this.iosLoad(t0);
             }
             else {
-                this.androidOpen();
-                this.iosOpen();
+                this.androidOpen(t0);
+                this.iosOpen(t0);
             }
         },
         openApp:function(src) {
