@@ -6,6 +6,7 @@ app.controller("experienceCtrl",function ($scope,scroll,open,$stateParams){
     $scope.phoneNum=$stateParams.phoneNum;
     console.log($scope.phoneNum)
     scroll.height()
+/*
     if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
         if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
             // 引导用户在浏览器中打开
@@ -18,10 +19,11 @@ app.controller("experienceCtrl",function ($scope,scroll,open,$stateParams){
         }
     }
     else {
+*/
         $scope.openAPP=function(){
             open.submitApp();
         };
-    }
+    //}
 
     $scope.sends = {
         checked:1,
