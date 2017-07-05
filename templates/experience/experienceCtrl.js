@@ -40,13 +40,18 @@ app.controller("experienceCtrl",function ($scope,scroll,open,$stateParams){
         },
         //微信弹窗
         wx:function(){
-            console.log(212)
+            this.pDefault()
             $('.prop').show();
             $('.prop .prop3').show().siblings().hide();
         },
         closeWX:function(){
             console.log(321)
             $('.prop').hide();
+        },
+        pDefault:function(){
+            $('.prop3').bind('click',function(e){
+                e.stopPropagation()
+            });
         }
     };
 
