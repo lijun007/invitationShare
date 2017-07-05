@@ -49,13 +49,16 @@ app.factory('open',function(){
             var t0 = d.getTime();
             if(/android/i.test(navigator.userAgent)){
                 //Android
+/*
                 var ifr = document.createElement('iframe');
                 ifr.src = 'xl://ymh:8888/FirstActivity';
                 ifr.style.display = 'none';
                 document.body.appendChild(ifr);
+*/
+                window.location.href='xl://ymh:8888/FirstActivity';
                 //由于打开需要1～2秒，利用这个时间差来处理－－打开app后，返回h5页面会出现页面变成app下载页面，影响用户体验
                 var delay = setInterval(function(){
-                    document.body.removeChild(ifr);
+                    //document.body.removeChild(ifr);
                     var d = new Date();
                     var t1 = d.getTime();
                     if( t1-t0<3000 && t1-t0>2000){
