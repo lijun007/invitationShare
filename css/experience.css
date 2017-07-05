@@ -71,7 +71,7 @@ html,body{
     bottom:0;
     margin:auto;
 }
-.prop .prop2{
+.prop .prop2,.prop .prop3{
     width:5rem;
     height:5.6rem;
     display: none;
@@ -91,6 +91,8 @@ html,body{
 .prop .prop2 .care{
     margin-top:0.6rem;
 }
+
+
 .prop .prop_content{
     padding:0.3rem;
     border: 0.04rem solid #ffb09e;

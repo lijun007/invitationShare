@@ -39,11 +39,13 @@ app.controller("experienceCtrl",function ($scope,scroll,open,$stateParams){
             $('.prop').hide()
         },
         //微信弹窗
-        weixin:function(){
+        wx:function(){
+            console.log(212)
             $('.prop').show();
             $('.prop .prop3').show().siblings().hide();
         },
-        closeweixin:function(){
+        closeWX:function(){
+            console.log(321)
             $('.prop').hide();
         }
     };
