@@ -32,6 +32,14 @@ app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider,$ur
                 }
             }
         })
+        .state('userRole', {
+            url: '/userRole',
+            views:{'':{
+                templateUrl: 'templates/userRole/userRole.html',
+
+                }
+            }
+        })
 }])
 app.factory('open',function(){
     return {
@@ -41,25 +49,26 @@ app.factory('open',function(){
             var t0 = d.getTime();
             if(/android/i.test(navigator.userAgent)){
                 //Android
-                if(this.openApp('xl://ymh:8888/FirstActivity')){
-                    this.openApp('xl://ymh:8888/FirstActivity');
-                }else{
-                    //由于打开需要1～2秒，利用这个时间差来处理－－打开app后，返回h5页面会出现页面变成app下载页面，影响用户体验
-                    var delay = setInterval(function(){
-                        var d = new Date();
-                        var t1 = d.getTime();
-                        if( t1-t0<3000 && t1-t0>2000){
-                            window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3539022?recrefer=SE_D_%E4%B8%8E%E7%BE%8E%E6%B1%87";
-                        }
-                        if(t1-t0>=1000){
-                            clearInterval(delay);
-                        }
-                    },1000);
-                }
+                var ifr = document.createElement('iframe');
+                ifr.src = 'xl://ymh:8888/FirstActivity';
+                ifr.style.display = 'none';
+                document.body.appendChild(ifr);
+                //由于打开需要1～2秒，利用这个时间差来处理－－打开app后，返回h5页面会出现页面变成app下载页面，影响用户体验
+                var delay = setInterval(function(){
+                    document.body.removeChild(ifr);
+                    var d = new Date();
+                    var t1 = d.getTime();
+                    if( t1-t0<3000 && t1-t0>2000){
+                        window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3539022?recrefer=SE_D_%E4%B8%8E%E7%BE%8E%E6%B1%87";
+                    }
+                    if(t1-t0>=1000){
+                        clearInterval(delay);
+                    }
+                },1000);
+
             }
             if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                 //IOS
-
                 if( this.openApp('testYMH://')){
                     this.openApp('testYMH://');
                 }else{

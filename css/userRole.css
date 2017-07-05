@@ -1,0 +1,8 @@
+
+#userRole h3{margin:0 0px 20px 0;}
+#userRole h4{font-weight: normal;}
+#userRole p{padding-left:1.3em;margin-bottom:20px;text-align: justify;color: #999;line-height: 1.5em;}
+
+#userRole .toUser .header{margin: 0;text-indent:0}
+#userRole {padding:20px 20px 0;color:#333;}
+#userRole .toUser p{padding-left: 0;text-indent: 2em}

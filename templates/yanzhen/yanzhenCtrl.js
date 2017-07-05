@@ -10,24 +10,23 @@ var urlReg='http://114.55.140.250/user/invitationRegister.do';
 var url='http://restapi.amap.com/v3/ip?ip=&output=xml&key=907e63b14492f7e9b16a50775d811280';
 app.controller("yanzhenCtrl",function ($scope,scroll,open,$http,$state){
     scroll.height();
-/*
-    if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
-        if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
+
+    if(/MicroMessenger/gi.test(navigator.userAgent)||/qq/ig.test(navigator.userAgent)) {
+        if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
             // 引导用户在浏览器中打开
             $('.guidePage').show();
-            return;
-        }else {
+        }
+        if(/android/i.test(navigator.userAgent)) {
             $scope.openAPP=function(){
                 open.submitApp();
             };
         }
     }
-*/
-    //else {
+    else {
         $scope.openAPP=function(){
             open.submitApp();
         };
-  //  }
+    }
     $scope.sends = {
         checked:1,
         //获取验证码
@@ -147,12 +146,13 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open,$http,$state){
             }else {
                 $('.error3').hide();
                 var pass=hex_md5($scope.pw);
+                var test=window.location.search;
+                var invitation=test.substr(test.indexOf("=")+1,8);
                 $http.post(url).success(function(data){
                     var regarea_id=data.adcode
-                    $http.post(urlReg+"?invitation=1&pwd="+pass+"&mobile="+$scope.num+"&type=1&status=0&divice_type=wap&regarea_id="+regarea_id).success(function(){
+                    $http.post(urlReg+"?invitation="+invitation+"&pwd="+pass+"&mobile="+$scope.num+"&type=1&status=0&divice_type=wap&regarea_id="+regarea_id).success(function(){
                         $state.go('experience',{phoneNum:$scope.num});
                     });
-
                 });
             }
         }
