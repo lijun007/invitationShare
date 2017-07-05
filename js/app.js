@@ -56,7 +56,7 @@ app.factory('open',function(){
                 document.body.appendChild(ifr);
 */
                 console.log(1)
-                window.location.href='xl://ymh:8888/FirstActivity';
+               // window.location.href='xl://ymh:8888/FirstActivity';
                 //由于打开需要1～2秒，利用这个时间差来处理－－打开app后，返回h5页面会出现页面变成app下载页面，影响用户体验
                 var delay = setInterval(function(){
                     //document.body.removeChild(ifr);
@@ -75,9 +75,11 @@ app.factory('open',function(){
             }
             if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                 //IOS
+/*
                 if( this.openApp('testYMH://')){
                     this.openApp('testYMH://');
                 }else{
+*/
                     var delay = setInterval(function(){
                         var d = new Date();
                         var t1 = d.getTime();
@@ -88,12 +90,14 @@ app.factory('open',function(){
                             clearInterval(delay);
                         }
                     },1000);
-                }
+                //}
             }
         },
+/*
         openApp:function(src) {
             window.location.href=src;
         },
+*/
 
     }
 });
