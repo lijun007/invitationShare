@@ -36,6 +36,7 @@ html,body{
     background: #ffb09e;
     color:#fff;
     text-indent:0;
+    -webkit-appearance:none;
 }
 .inner .form .error{
     display: none;
