@@ -64,7 +64,7 @@ app.factory('open',function(){
                     if( t1-t0<3000 && t1-t0>2000){
                         window.location.href = "http://zhushou.360.cn/detail/index/soft_id/3539022?recrefer=SE_D_%E4%B8%8E%E7%BE%8E%E6%B1%87";
                     }
-                    if(t1-t0>=1000){
+                    if(t1-t0>=2000){
                         clearInterval(delay);
                     }
                 },1000);
@@ -81,7 +81,7 @@ app.factory('open',function(){
                         if( t1-t0<3000 && t1-t0>2000){
                             window.location.href ="itms-apps://itunes.apple.com/cn/app/yu-mei-hui-ke-hu-duan/id1161081835?mt=8";
                         }
-                        if(t1-t0>=1000){
+                        if(t1-t0>=2000){
                             clearInterval(delay);
                         }
                     },1000);
