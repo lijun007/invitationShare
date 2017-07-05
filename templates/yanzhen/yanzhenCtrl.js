@@ -6,7 +6,7 @@ var urlSend='http://114.55.140.250/mes/front/send';
 //var urlVal='http://localhost/mes/front/validation';
 var urlVal='http://114.55.140.250/mes/front/validation';
 //var urlReg='http://localhost/user/invitationRegister.do';
-var urlReg='http://114.55.140.250/user/invitationRegister.do';
+var urlReg='http://114.55.140.250/ymh/user/invitationRegister.do';
 var url='http://restapi.amap.com/v3/ip?ip=&output=xml&key=907e63b14492f7e9b16a50775d811280';
 app.controller("yanzhenCtrl",function ($scope,scroll,open,$http,$state){
     scroll.height();
@@ -147,11 +147,12 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open,$http,$state){
             }else {
                 $('.error3').hide();
                 var pass=hex_md5($scope.pw);
+
                 var test=window.location.search;
                 var invitation=test.substr(test.indexOf("=")+1,8);
                 $http.post(url).success(function(data){
                     var regarea_id=data.adcode
-                    $http.post(urlReg+"?invitation="+invitation+"&pwd="+pass+"&mobile="+$scope.num+"&type=1&status=0&divice_type=wap&regarea_id="+regarea_id).success(function(){
+                    $http.post(urlReg+"?invitation="+invitation+"account="+$scope.num+"&pwd="+pass+"&type=1&status=0&divice_type=wap&regarea_id="+regarea_id).success(function(){
                         $state.go('experience',{phoneNum:$scope.num});
                     });
                 });
