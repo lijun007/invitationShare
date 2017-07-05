@@ -63,7 +63,7 @@ app.factory('open',function(){
         openApp:function(src) {
             window.location.href=src;
         },
-        iosLoad:function(){
+        iosLoad:function(t0){
             if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                 var delay = setInterval(function(){
                     var d = new Date();
@@ -77,7 +77,7 @@ app.factory('open',function(){
                 },1000);
             }
         },
-        androidLoad:function(){
+        androidLoad:function(t0){
             if(/android/i.test(navigator.userAgent)){
                 var delay = setInterval(function(){
                     console.log(2)
@@ -93,7 +93,7 @@ app.factory('open',function(){
                 },1000);
             };
         },
-        iosOpen:function(){
+        iosOpen:function(t0){
             if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
                 //IOS
                 if( this.openApp('testYMH://')){
@@ -112,7 +112,7 @@ app.factory('open',function(){
                 }
             }
         },
-        androidOpen:function(){
+        androidOpen:function(t0){
             if(/android/i.test(navigator.userAgent)){
                 //Android
                 if( this.openApp('xl://ymh:8888/FirstActivity')){
