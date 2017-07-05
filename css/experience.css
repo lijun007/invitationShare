@@ -63,6 +63,7 @@ html,body{
     z-index: 10;
     display: none;
 }
+.ac{background: rgba(0,0,0,.7)}
 .prop .prop_{
     position: absolute;
     top:0;
@@ -76,7 +77,7 @@ html,body{
     height:5.6rem;
     display: none;
 }
-.prop .prop3{color:#fff;}
+.prop .prop3{color:#fff;font-size: 0.3rem;}
 .prop .prop2 h3{
     font-size: 0.28rem;
     font-weight: normal;

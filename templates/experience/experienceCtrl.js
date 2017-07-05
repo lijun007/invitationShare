@@ -30,7 +30,7 @@ app.controller("experienceCtrl",function ($scope,scroll,open,$stateParams){
         //活动规则
         role:function(){
             //console.log(3)
-            $('.prop').show();
+            $('.prop').removeClass('ac').show();
             $('.prop .prop2').show().siblings().hide();
         },
         //关闭弹窗
@@ -41,7 +41,7 @@ app.controller("experienceCtrl",function ($scope,scroll,open,$stateParams){
         //微信弹窗
         wx:function(){
             this.pDefault()
-            $('.prop').show();
+            $('.prop').addClass('ac').show();
             $('.prop .prop3').show().siblings().hide();
         },
         closeWX:function(){
