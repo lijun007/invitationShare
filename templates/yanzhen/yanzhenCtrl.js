@@ -5,7 +5,7 @@
 var urlSend='http://114.55.140.250/mes/front/send';
 //var urlVal='http://localhost/mes/front/validation';
 var urlVal='http://114.55.140.250/mes/front/validation';
-//var urlReg='http://localhost/user/invitationRegister.do';
+//var urlReg='http://localhost/ymh/user/invitationRegister.do';
 var urlReg='http://114.55.140.250/ymh/user/invitationRegister.do';
 var url='http://restapi.amap.com/v3/ip?ip=&output=xml&key=907e63b14492f7e9b16a50775d811280';
 app.controller("yanzhenCtrl",function ($scope,scroll,open,$http,$state){
@@ -141,19 +141,24 @@ app.controller("yanzhenCtrl",function ($scope,scroll,open,$http,$state){
         },
         //输入密码条件限制
         password:function(){
-            var pw=/^[a-zA-Z0-9]{6,16}$/;
+            var pw=/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,10}$/;
             if(!pw.test($scope.pw)){
                $('.error3').show()
             }else {
                 $('.error3').hide();
-                var pass=hex_md5($scope.pw);
-
+                var pass=hex_md5($scope.pw)+'ymh';
+                console.log(pass)
                 var test=window.location.search;
                 var invitation=test.substr(test.indexOf("=")+1,8);
                 $http.post(url).success(function(data){
                     var regarea_id=data.adcode
-                    $http.post(urlReg+"?invitation="+invitation+"account="+$scope.num+"&pwd="+pass+"&type=1&status=0&divice_type=wap&regarea_id="+regarea_id).success(function(){
-                        $state.go('experience',{phoneNum:$scope.num});
+                    console.log($scope.num)
+                    $http.post(urlReg+"?invitation="+invitation+"&account="+$scope.num+"&pwd="+pass+"&type=1&status=0&divice_type=wap&regarea_id="+regarea_id).success(function(data){
+                        console.log(data)
+                        if(data.msg=='邀请成功'){
+                            console.log(123)
+                            $state.go('experience',{phoneNum:$scope.num});
+                        }
                     });
                 });
             }
